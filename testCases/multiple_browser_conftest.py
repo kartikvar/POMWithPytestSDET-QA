@@ -24,10 +24,17 @@ def setup(browser):
     return driver
 
 
-def pytest_addoption(parser):   # this will get value from CLI/hooks
+def pytest_addoption(parser):  # this will get value from CLI/hooks
     parser.addoption("--browser")
 
 
-@pytest.fixture()               # this will return browser value to setup method
+@pytest.fixture()  # this will return browser value to setup method
 def browser(request):
     return request.config.getoption("--browser")
+
+
+# fields to show in reports
+def pytest_configure(config):
+    config.metadata['Project Name'] = 'nop commerce'
+    config.metadata['Module Name'] = 'Customers'
+    config.metadata['Tester'] = 'Kartik'
