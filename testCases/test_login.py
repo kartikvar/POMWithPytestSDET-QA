@@ -8,6 +8,7 @@ from utilities.custom_logger import LogGeneration
 
 class Test_001_Login:
     baseURL = ReadConfig.get_application_url()
+    print("URL is {}".format(baseURL))
     username = ReadConfig.get_username()
     password = ReadConfig.get_password()
     log = LogGeneration.logging()
@@ -16,6 +17,7 @@ class Test_001_Login:
         self.log.info("****************** Test_001_Login *******************")
         self.log.info("****************** Verify home page title *******************")
         self.driver = setup
+        print("URL is {}".format(self.baseURL))
         self.driver.maximize_window()
         self.driver.get(self.baseURL)
         actual_title = self.driver.title

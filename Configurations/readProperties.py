@@ -1,7 +1,8 @@
 import configparser
 
 config = configparser.ConfigParser()
-config.read(".\\Configurations\\config.ini")
+#config.read(".\\Configurations\\config.ini")
+config.read("D:\\Learn_SDET\\Selenium\\Selenium_Codes\\POMWithPytestSDET-QA\\Configurations\\config.ini")
 
 
 class ReadConfig:
